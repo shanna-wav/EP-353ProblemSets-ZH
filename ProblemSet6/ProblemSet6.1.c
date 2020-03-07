@@ -4,10 +4,10 @@
 
 void swap (int *a, int *b);
 void swap (int *a, int *b) {
-    int *c;
-    *c = *b;
+    int c;
+    c = *b;
     *b = *a;
-    *a = *c;
+    *a = c;
 }
 
 //Sorting function that uses swap function to put inputs from smallest to largest. 
