@@ -36,6 +36,7 @@ int main () {
     }
 
 fclose(file);
+free(array);
 
 return 0;
 
