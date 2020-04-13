@@ -1,19 +1,3 @@
-/*
- * Copyright (c) 2017 Michael Schwarz.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation, version 3.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Lesser Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include "libattopng.h"
 #include <stdlib.h>
 #include <string.h>
@@ -59,7 +43,7 @@ libattopng_t *libattopng_new(size_t width, size_t height, libattopng_type_t type
         /* ensure no type leads to an integer overflow */
         return NULL;
     }
-    png = (libattopng_t *) malloc(sizeof(libattopng_t));
+    png = (libattopng_t *) calloc(sizeof(libattopng_t), 1);
     png->width = width;
     png->height = height;
     png->capacity = width * height;
@@ -92,7 +76,7 @@ libattopng_t *libattopng_new(size_t width, size_t height, libattopng_type_t type
         png->bpp = 4;
     }
 
-    png->data = (char *) malloc(png->capacity);
+    png->data = (char *) calloc(png->capacity, 1);
     if (!png->data) {
         free(png->palette);
         free(png);
@@ -291,7 +275,7 @@ char *libattopng_get_data(libattopng_t *png, size_t *len) {
         free(png->out);
     }
     png->out_capacity = png->capacity + 4096 * 8;
-    png->out = (char *) malloc(png->out_capacity);
+    png->out = (char *) calloc(png->out_capacity, 1);
     png->out_pos = 0;
     if (!png->out) {
         return NULL;
@@ -397,7 +381,7 @@ int libattopng_save(libattopng_t *png, const char *filename) {
     if (!f) {
         return 1;
     }
-    if (fwrite(data, len, 1, f) != len) {
+    if (fwrite(data, len, 1, f) != 1) {
         fclose(f);
         return 1;
     }

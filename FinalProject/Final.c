@@ -8,8 +8,8 @@
 
 //How to compile: clang Final.c -o Final libattopng.c -lsndfile 
 
-void DFT (double *DFTIn, double *DFTOut, int N);
-void DFT (double *DFTIn, double *DFTOut, int N)
+void DFT (double *DFTIn, double *DFTOut, long long N);
+void DFT (double *DFTIn, double *DFTOut, long long N)
 {
     for (int k = 0; k < N - 1; k++)
     {
@@ -18,23 +18,25 @@ void DFT (double *DFTIn, double *DFTOut, int N)
             DFTOut[k] = DFTIn[n] * (cos (((2 * M_PI) / N) * k * n) - sin (((2 * M_PI) / N) * k * n));
         }
     }
+    printf ("DFT done.\n");
 }
 
-void PNG (double *X, int N);
-void PNG (double *X, int N)
+void PNG (double *DFTOut, long long N);
+void PNG (double *DFTOut, long long N)
 {
-    libattopng_t *png = libattopng_new(N*2, N*2, PNG_GRAYSCALE);
+    libattopng_t *png = libattopng_new(N, N, PNG_GRAYSCALE);
     
     for (int x = 0; x < N; x++)
     {
         for (int y = 0; y < N; y++)
         {
-            libattopng_set_pixel (png, x, y, (int) (256.0f * X[y]));
+            libattopng_set_pixel (png, x, y, (int) (256.0f * DFTOut[y]));
         }
     }
 
     libattopng_save (png, "test_DFT.png");
     libattopng_destroy (png);
+    printf ("PNG done.\n");
 }
 
 int main() 
@@ -73,9 +75,11 @@ int main()
 		return 1;
 	}
 
-    //DFT (buffer, DFTOut, N);
-
-    //PNG (DFTOut, N);
+    sf_read_double (sndFile, buffer, N);
+    
+    DFT (buffer, DFTOut, N);
+    
+    PNG (DFTOut, N);
 
     if(!sf_format_check(&sfInfo))
     {	
