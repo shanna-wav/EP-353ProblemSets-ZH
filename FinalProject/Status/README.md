@@ -2,24 +2,22 @@
 
 #### Your name
 
-TODO
+Zanne Hanna
 
 #### Project title
 
-TODO
+Auditory Analysis by Critical Bandwidth
 
 ***
 
-Short answers for the below questions suffice. If you want to alter your plan for your project (and obtain approval for the same), be sure to resubmit your proposal and email your instructor!
-
 #### What have you done for your project so far?
 
-TODO
+I have built a DFT algorith for my project, which works with a simple sine wave. I have developed the DFT algorith into the FFT algorithm, and I have successfully compiled the FFT with a simple sine wave.
 
 #### What have you not done for your project yet?
 
-TODO
+The last element of my project is organizing the results of the FFT into the correct critical bandwidth "barks". 
 
 #### What problems, if any, have you encountered?
 
-TODO
+I struggled with building my DFT algorithm because it compiled really slowly. The FFT works fine though, so I feel okay with that. 
