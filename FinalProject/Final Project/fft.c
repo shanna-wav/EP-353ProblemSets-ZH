@@ -23,11 +23,11 @@ void partition (complex *inStart, complex *inEnd)
     {
         if (i % 2 == 0)
         {
-            snuggle[floor(i/2)] = inStart[i];
+            snuggle[(int)floor(i/2)] = inStart[i];
         }
         else
         {
-            snuggle[(N/2) + floor(i/2)] = inStart[i];
+            snuggle[(N/2) + (int)floor(i/2)] = inStart[i];
         }
         
     }
@@ -63,10 +63,10 @@ void FFT (complex *inStart, complex *inEnd)
         dft.imag = (dft.real * odd.imag) + (dft.imag * odd.real); //mafs
 
         *(inStart + i) = even;
-        *(inStart + i).real += dft.real;
-        *(inStart + i).imag += dft.imag;
+        (inStart + i)->real += dft.real;
+        (inStart + i)->imag += dft.imag;
         *(inStart + (N/2) + i) = even;
-        *(inStart + (N/2) + i).real -= dft.real;
-        *(inStart + (N/2) + i).imag -= dft.imag;
+        (inStart + (N/2) + i)->real -= dft.real;
+        (inStart + (N/2) + i)->imag -= dft.imag;
     }
 }
