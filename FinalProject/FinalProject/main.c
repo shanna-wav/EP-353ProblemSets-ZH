@@ -53,25 +53,25 @@ void FFT (complex *inStart, complex *inEnd)
     else 
     {
         partition (inStart, inEnd);
-    }
 
-    FFT (inStart, inStart + (N/2));
-    FFT (inStart + (N/2), inEnd);
+        FFT (inStart, inStart + (N/2));
+        FFT (inStart + (N/2), inEnd);
 
-    for (int i = 0; i < (N/2); i++) 
-    {
-        complex even = *(inStart + i);
-        complex odd = *(inStart + (N/2) + i);
-        complex dft = {0, exp(-2.0 * M_PI * i / N)};
-        dft.real = (dft.real * odd.real) + (dft.imag *odd.imag);
-        dft.imag = (dft.real * odd.imag) + (dft.imag * odd.real); //mafs
+        for (int i = 0; i < (N/2); i++) 
+        {
+            complex even = *(inStart + i);
+            complex odd = *(inStart + (N/2) + i);
+            complex dft = {0, exp(-2.0 * M_PI * ((double)i / (double)N))};
+            dft.real = (dft.real * odd.real) + (dft.imag *odd.imag);
+            dft.imag = (dft.real * odd.imag) + (dft.imag * odd.real);
 
-        *(inStart + i) = even;
-        (inStart + i)->real += dft.real;
-        (inStart + i)->imag += dft.imag;
-        *(inStart + (N/2) + i) = even;
-        (inStart + (N/2) + i)->real -= dft.real;
-        (inStart + (N/2) + i)->imag -= dft.imag;
+            *(inStart + i) = even;
+            (inStart + i)->real += dft.real;
+            (inStart + i)->imag += dft.imag;
+            *(inStart + (N/2) + i) = even;
+            (inStart + (N/2) + i)->real -= dft.real;
+            (inStart + (N/2) + i)->imag -= dft.imag;
+        }
     }
 }
 
@@ -80,7 +80,6 @@ int main()
     SNDFILE *sndFile;
 	SF_INFO sfInfo;
     complex *buffer;
-    complex *FFTOut;
     
     memset(&sfInfo, 0, sizeof(SF_INFO));
 
@@ -95,7 +94,7 @@ int main()
 
     long long N = sfInfo.frames;
 
-    buffer = malloc (N * sizeof(complex));
+    buffer = malloc (pow(2, ceil(log2(N))) * sizeof(complex));
 
     if (!buffer)
     {
@@ -103,32 +102,39 @@ int main()
 		return 1;
 	}
 
-    FFTOut = malloc (BUFFERSIZE * sizeof(complex));
+    double *tempbuff = malloc (N * sizeof(double));
 
-    if (!FFTOut)
+        if (!tempbuff)
     {
         printf ("Error : Malloc failed.\n");
 		return 1;
 	}
 
-    buffer = malloc (sizeof(buffer));
+    sf_read_double (sndFile, tempbuff, N);
 
-
-    buffer->real = malloc (BUFFERSIZE * sizeof(buffer->real));
-
-    buffer->imag = malloc (BUFFERSIZE * sizeof(buffer->imag));
- 
-
-    sf_read_double (sndFile, buffer->real, N);
-    sf_read_double (sndFile, buffer->imag, N);
+    for (int i = 0; i < pow(2, ceil(log2(N))); i++)
+    {
+        if (i > N) 
+        {
+            buffer[i].real = 0.0f;
+            buffer[i].imag = 0.0f;
+        }
+        else 
+        {
+            buffer[i].real = tempbuff[i];
+            buffer[i].imag = 0.0f;
+        }
+    }
     
-    FFT (buffer, FFTOut);
+    free(tempbuff);
+
+    FFT (buffer, buffer + (int) pow(2, ceil(log2(N))));
 
     printf ("FFT done.\n");
     
     for (int p = 0; p < BUFFERSIZE; p++)
     {
-        printf("FFT Value: %lf, %lf\n", FFTOut[p].real, FFTOut[p].imag);
+        printf("FFT Value: %0.4lf, %0.4lf\n", buffer[p].real, buffer[p].imag);
     }
 
     if(!sf_format_check(&sfInfo))
@@ -139,8 +145,5 @@ int main()
 	}
 
     free (buffer);
-    free (FFTOut);
     return 0;
 }
-
-//store results of fft into csb file and graph it there
