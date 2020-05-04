@@ -80,6 +80,8 @@ int main()
     SNDFILE *sndFile;
 	SF_INFO sfInfo;
     complex *buffer;
+
+    int bark[25] = {0, 100, 200, 300, 400, 505, 630, 770, 915, 1080, 1265, 1475, 1720, 1990, 2310, 2690, 3125, 3625, 4350, 5250, 6350, 7650, 9400, 11750, 15250};
     
     memset(&sfInfo, 0, sizeof(SF_INFO));
 
@@ -92,7 +94,7 @@ int main()
 		return 1;
     }
 
-    long long N = sfInfo.frames;
+    long long N = sfInfo.frames; 
 
     buffer = malloc (pow(2, ceil(log2(N))) * sizeof(complex));
 
@@ -128,13 +130,82 @@ int main()
     
     free(tempbuff);
 
-    FFT (buffer, buffer + (int) pow(2, ceil(log2(N))));
+
+    double *FFTresult = malloc (BUFFERSIZE * sizeof(double));
+
+    if (!FFTresult)
+    {
+        printf ("Error : Malloc failed.\n");
+		return 1;
+	}
+
+    // memset(&FFTresult, 0.0, sizeof(double));
+    for (int i = 0; i < BUFFERSIZE; i++) { FFTresult[i] = 0.f; }
+
+
+    int f;
+    printf ("!Rawr xd\n");
+    for (f = 0; f < (int)pow(2, ceil(log2(N))); f+=256)
+    {   
+        if (f+255 < (int)pow(2, ceil(log2(N))))
+        {
+            FFT (buffer + f, buffer + f + 255);
+            for (int i = 0; i < BUFFERSIZE; i++)
+            {
+                // printf("buffer: %lf\n", (buffer + f + i)->real);
+                // printf("fft: %lf\n", FFTresult[i]);
+                FFTresult[i] += (buffer + f + i)->real;
+            }
+        }
+    }
+    // printf ("!Rawr xd\n");
+    for (int i = 0; i < BUFFERSIZE; i++)
+    {
+        FFTresult[i] /= f;
+    }
+
 
     printf ("FFT done.\n");
-    
-    for (int p = 0; p < BUFFERSIZE; p++)
+
+    double *barkout = malloc (24 * sizeof(double));
+
+    if (!barkout)
     {
-        printf("FFT Value: %0.4lf, %0.4lf\n", buffer[p].real, buffer[p].imag);
+        printf ("Error : Malloc failed.\n");
+		return 1;
+	}
+
+    int dividend = 0;
+    int currentbark = 0;
+    int binfreq;
+    
+    //BARK LOOP
+
+    for (int bin = 0; bin < BUFFERSIZE; bin++)
+    {
+        binfreq = ((float) bin / BUFFERSIZE) * sfInfo.samplerate;
+        printf ("samplerate: %d\n", sfInfo.samplerate);
+        printf("FFT Value of Bin #%d at %dHz: %0.2lf\n", bin, binfreq, buffer[bin].real);
+        for (int i = 0; i <25; i++)
+        {
+            if (binfreq >= bark[i] && binfreq <= bark[i+1])
+            {
+                if (i != currentbark) //beginning of new bark
+                {
+                    barkout[i] /= dividend;
+                    dividend = 0;
+                    currentbark += i;
+                }
+                barkout[i] += buffer[bin].real;
+                dividend++;
+                printf ("%f\n", barkout[i]);
+            }
+        }
+    }
+
+    for (int b = 0; b < 25; b++)
+    {
+        printf ("Bark %d value: %f\n", b, barkout[b]);
     }
 
     if(!sf_format_check(&sfInfo))
@@ -145,5 +216,6 @@ int main()
 	}
 
     free (buffer);
+    free (barkout);
     return 0;
 }
