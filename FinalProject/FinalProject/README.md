@@ -10,7 +10,7 @@ Auditory Analysis by Critical Bandwidth
 - sine.wav
 - eBass.wav
 - 00-calung1.wav
-- results.txt
+- FinalResults.txt
 - Presentation.pdf
 
 ### Header Files Required

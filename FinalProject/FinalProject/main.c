@@ -105,7 +105,9 @@ int main()
     //Array to hold critical bandwidth ranges called "barks".
 
     int bark[25] = {0, 100, 200, 300, 400, 505, 630, 770, 915, 1080, 1265, 1475, 1720, 1990, 2310, 2690, 3125, 3625, 4350, 5250, 6350, 7650, 9400, 11750, 15250};
-    
+
+   //Make soundfile to read.
+
     sndFile = sf_open("sine.wav", SFM_READ, &sfInfo);
 
     if(!sndFile)
@@ -116,6 +118,21 @@ int main()
     }
 
     long long N = sfInfo.frames; 
+
+    //Make text file to store data.
+
+    FILE *file;
+
+    file = fopen("FinalResults.txt", "w");
+
+    if(file == NULL)
+    {
+        printf("File cannot be opened.\n");
+        return 1; 
+    }
+
+    fprintf (file, "Sample Rate is: %d Hz\n", sfInfo.samplerate);
+    fprintf (file, "Number of frames is: %lld Hz\n", N);
 
     //Ceil and floor functions used for zero padding to avoid segmentation fault 11
     //Ensures base 2 values
@@ -138,7 +155,11 @@ int main()
 		return 1;
 	}
 
+    //Read soundfile into tempbuff.
+
     sf_read_double (sndFile, tempbuff, N);
+
+    //Place tempbuff values back into buffer in order.
 
     for (int i = 0; i < pow(2, ceil(log2(N))); i++)
     {
@@ -156,6 +177,7 @@ int main()
     
     free(tempbuff);
 
+    //Create array to hold FFT frequency values.
 
     double *FFTresult = malloc (BUFFERSIZE * sizeof(double));
 
@@ -173,6 +195,9 @@ int main()
     }
 
     int f;
+
+    //Implement FFT function.
+
     for (f = 0; f < (int)pow(2, ceil(log2(N))); f+=256)
     {   
         if (f+255 < (int)pow(2, ceil(log2(N))))
@@ -184,12 +209,15 @@ int main()
             }
         }
     }
+
+    //Find average of each bin.
+
     for (int i = 0; i < BUFFERSIZE; i++)
     {
         FFTresult[i] /= f;
     }
 
-    printf ("FFT done.\n");
+    printf ("FFT Completed.\n");
 
     double *barkout = malloc (24 * sizeof(double));
 
@@ -208,8 +236,7 @@ int main()
     for (int bin = 0; bin < BUFFERSIZE; bin++)
     {
         binfreq = ((float) bin / BUFFERSIZE) * sfInfo.samplerate;
-        printf ("samplerate: %d\n", sfInfo.samplerate);
-        printf("FFT Value of Bin #%d at %dHz: %0.2lf\n", bin, binfreq, buffer[bin].real);
+        fprintf(file, "FFT Value of Bin #%d at %dHz: %0.2lf\n", bin, binfreq, buffer[bin].real);
         for (int i = 0; i <25; i++)
         {
             if (binfreq >= bark[i] && binfreq <= bark[i+1])
@@ -222,15 +249,11 @@ int main()
                 }
                 barkout[i] += buffer[bin].real;
                 dividend++;
-                printf ("%f\n", barkout[i]);
             }
         }
     }
 
-    for (int b = 0; b < 25; b++)
-    {
-        printf ("Bark Number %d Energy Value: %f\n", b, barkout[b]);
-    }
+    
 
     if(!sf_format_check(&sfInfo))
     {	
@@ -239,6 +262,21 @@ int main()
 		return 1;
 	}
 
+
+
+    for (int b = 0; b < 25; b++)
+
+    {   
+        fprintf (file, "Bark Number %d Energy Value: %f\n", b, barkout[b]);
+    }
+
+    printf ("Completed. View in FinalResults.txt.\n");
+    printf ("Highest value represents critical bandwidth with most frequency energy.\n");
+
+    if(file) 
+    {
+        fclose(file);
+    }
     free (buffer);
     free (barkout);
     return 0;
