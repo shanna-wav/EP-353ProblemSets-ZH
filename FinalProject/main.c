@@ -8,6 +8,7 @@
 //HOW TO COMPILE: clang main.c -o main -lsndfile
 
 #define BUFFERSIZE 256
+#define FILENAME "Sine2000.wav"
 
 //Complex structure acts as complex number, holding real and imaginary values.
 
@@ -17,9 +18,8 @@ typedef struct complex
     double imag;
 } complex;
 
-/*Function created for FFT. This separates odd/even or real/imaginary values and reorganizes
-so that the real values are calculated at the start of inStart, 
-and the imaginary values are calculated after.*/
+/*Function created for FFT. This separates odd/even values and reorganizes them,
+so that all of even values are in front of buffer, and odd values are in the back half.*/
 
 void partition (complex *inStart, complex *inEnd);
 void partition (complex *inStart, complex *inEnd)
@@ -63,22 +63,35 @@ void FFT (complex *inStart, complex *inEnd)
 {
     int N = inEnd - inStart;
 
+    //Zero padding for N to avoid segmentation fault + ensure divisibility. 
+
     if (N < 2) return;
 
     else 
     {
+        //Implement partition in FFT to reorganize real and imaginary values.
+
         partition (inStart, inEnd);
+
+        //Calling function inside function for recursion. 
 
         FFT (inStart, inStart + (N/2));
         FFT (inStart + (N/2), inEnd);
 
+        //Main part of this function. 
+        //Applying DFT equation to real and imaginary values.
+
         for (int i = 0; i < (N/2); i++) 
         {
+            //Temporary complex values to store even and add values.
+            //Organized in dft struct. 
             complex even = *(inStart + i);
             complex odd = *(inStart + (N/2) + i);
             complex dft = {0, exp(-2.0 * M_PI * ((double)i / (double)N))};
             dft.real = (dft.real * odd.real) + (dft.imag *odd.imag);
             dft.imag = (dft.real * odd.imag) + (dft.imag * odd.real);
+
+            //Reassigning odd and even calculations to inStart/buffer in order from dft.
 
             *(inStart + i) = even;
             (inStart + i)->real += dft.real;
@@ -94,8 +107,6 @@ void FFT (complex *inStart, complex *inEnd)
 
 int main() 
 {
-    //Creating soundfile to store sound file for evaluation.
-
     SNDFILE *sndFile;
 	SF_INFO sfInfo;
     complex *buffer;
@@ -108,7 +119,7 @@ int main()
 
    //Make soundfile to read.
 
-    sndFile = sf_open("sine.wav", SFM_READ, &sfInfo);
+    sndFile = sf_open(FILENAME, SFM_READ, &sfInfo);
 
     if(!sndFile)
     {
@@ -117,9 +128,11 @@ int main()
 		return 1;
     }
 
+    //Assign length of audiofile to variable N.
+
     long long N = sfInfo.frames; 
 
-    //Make text file to store data.
+    //Make text file to store results of program.
 
     FILE *file;
 
@@ -134,8 +147,7 @@ int main()
     fprintf (file, "Sample Rate is: %d Hz\n", sfInfo.samplerate);
     fprintf (file, "Number of frames is: %lld Hz\n", N);
 
-    //Ceil and floor functions used for zero padding to avoid segmentation fault 11
-    //Ensures base 2 values
+    //Ceil function for zero padding to ensures base 2 values.
 
     buffer = malloc (pow(2, ceil(log2(N))) * sizeof(complex));
 
@@ -159,7 +171,7 @@ int main()
 
     sf_read_double (sndFile, tempbuff, N);
 
-    //Place tempbuff values back into buffer in order.
+    //Place tempbuff values back into buffer to use buffer for FFT.
 
     for (int i = 0; i < pow(2, ceil(log2(N))); i++)
     {
@@ -196,13 +208,17 @@ int main()
 
     int f;
 
-    //Implement FFT function.
+    //Implement FFT function at 256 increments.
 
     for (f = 0; f < (int)pow(2, ceil(log2(N))); f+=256)
     {   
         if (f+255 < (int)pow(2, ceil(log2(N))))
         {
             FFT (buffer + f, buffer + f + 255);
+            
+            //Store FFT values temporarily in FFT result.
+            //Get value of each sample in buffer.
+
             for (int i = 0; i < BUFFERSIZE; i++)
             {
                 FFTresult[i] += (buffer + f + i)->real;
@@ -210,7 +226,7 @@ int main()
         }
     }
 
-    //Find average of each bin.
+    //Find average of each bin. 
 
     for (int i = 0; i < BUFFERSIZE; i++)
     {
@@ -218,6 +234,8 @@ int main()
     }
 
     printf ("FFT Completed.\n");
+
+    //Create array to temporarily store bark values.
 
     double *barkout = malloc (24 * sizeof(double));
 
@@ -227,11 +245,13 @@ int main()
 		return 1;
 	}
 
+    //Defining variables for bark loop.
+
     int dividend = 0;
     int currentbark = 0;
     int binfreq;
     
-    //BARK LOOP
+    //Bark function uses equation of 1/buffersize * samplerate to determine frequency of each bin.
 
     for (int bin = 0; bin < BUFFERSIZE; bin++)
     {
@@ -239,14 +259,19 @@ int main()
         fprintf(file, "FFT Value of Bin #%d at %dHz: %0.2lf\n", bin, binfreq, buffer[bin].real);
         for (int i = 0; i <25; i++)
         {
+            //Resets current bark each time a bark is filled and the average is taken.
+
             if (binfreq >= bark[i] && binfreq <= bark[i+1])
             {
-                if (i != currentbark) //beginning of new bark
+                if (i != currentbark)
                 {
                     barkout[i] /= dividend;
                     dividend = 0;
                     currentbark += i;
                 }
+
+                //Adding bin frequency to specific bandwidth. 
+
                 barkout[i] += buffer[bin].real;
                 dividend++;
             }
@@ -262,7 +287,7 @@ int main()
 		return 1;
 	}
 
-
+    //Prints values in critical bandwidths into txt file. 
 
     for (int b = 0; b < 25; b++)
 
@@ -273,10 +298,13 @@ int main()
     printf ("Completed. View in FinalResults.txt.\n");
     printf ("Highest value represents critical bandwidth with most frequency energy.\n");
 
+    //Clean up. 
+
     if(file) 
     {
         fclose(file);
     }
+
     free (buffer);
     free (barkout);
     return 0;
