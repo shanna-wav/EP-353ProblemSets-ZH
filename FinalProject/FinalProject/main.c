@@ -5,7 +5,11 @@
 #include <string.h>
 #include <sndfile.h>
 
+//HOW TO COMPILE: clang main.c -o main -lsndfile
+
 #define BUFFERSIZE 256
+
+//Complex structure acts as complex number, holding real and imaginary values.
 
 typedef struct complex
 {
@@ -13,16 +17,22 @@ typedef struct complex
     double imag;
 } complex;
 
-//How to compile: clang main.c -o main -lsndfile
+/*Function created for FFT. This separates odd/even or real/imaginary values and reorganizes
+so that the real values are calculated at the start of inStart, 
+and the imaginary values are calculated after.*/
 
 void partition (complex *inStart, complex *inEnd);
 void partition (complex *inStart, complex *inEnd)
 {
+    //Defining temporary array to store complex values. 
+    //Length of array is N: distance between start and end of buffer.
+
     int N = inEnd-inStart;
     complex *temp;
     temp = malloc(N * sizeof(complex));
 
     //Separating odd and even items into temp.
+
     for (int i = 0; i < N; i++)
     {
         if (i % 2 == 0)
@@ -36,12 +46,17 @@ void partition (complex *inStart, complex *inEnd)
         
     }
     //Putting temp into inStart in the new order.
+
     for (int i = 0; i < N; i++)
     {
         inStart[i] = temp[i];
     }
     free (temp);
 }
+
+/*FFT function using "divid and conquer" or "Cooley Turkey" method.
+DFT formula used and separated into real and imaginary values.
+Values are reassigned to inStart in chronological order.*/
 
 void FFT (complex *inStart, complex *inEnd);
 void FFT (complex *inStart, complex *inEnd)
@@ -75,16 +90,22 @@ void FFT (complex *inStart, complex *inEnd)
     }
 }
 
+//Main function for FFT implementation and bark definition.
+
 int main() 
 {
+    //Creating soundfile to store sound file for evaluation.
+
     SNDFILE *sndFile;
 	SF_INFO sfInfo;
     complex *buffer;
 
-    int bark[25] = {0, 100, 200, 300, 400, 505, 630, 770, 915, 1080, 1265, 1475, 1720, 1990, 2310, 2690, 3125, 3625, 4350, 5250, 6350, 7650, 9400, 11750, 15250};
-    
     memset(&sfInfo, 0, sizeof(SF_INFO));
 
+    //Array to hold critical bandwidth ranges called "barks".
+
+    int bark[25] = {0, 100, 200, 300, 400, 505, 630, 770, 915, 1080, 1265, 1475, 1720, 1990, 2310, 2690, 3125, 3625, 4350, 5250, 6350, 7650, 9400, 11750, 15250};
+    
     sndFile = sf_open("sine.wav", SFM_READ, &sfInfo);
 
     if(!sndFile)
@@ -96,6 +117,9 @@ int main()
 
     long long N = sfInfo.frames; 
 
+    //Ceil and floor functions used for zero padding to avoid segmentation fault 11
+    //Ensures base 2 values
+
     buffer = malloc (pow(2, ceil(log2(N))) * sizeof(complex));
 
     if (!buffer)
@@ -103,6 +127,8 @@ int main()
         printf ("Error : Malloc failed.\n");
 		return 1;
 	}
+
+    //Temporary buffer created so program can read sound file as double and not as complex.
 
     double *tempbuff = malloc (N * sizeof(double));
 
@@ -139,12 +165,14 @@ int main()
 		return 1;
 	}
 
-    // memset(&FFTresult, 0.0, sizeof(double));
-    for (int i = 0; i < BUFFERSIZE; i++) { FFTresult[i] = 0.f; }
+    //Manual "memset" for FFTresult array.
 
+    for (int i = 0; i < BUFFERSIZE; i++)
+    { 
+        FFTresult[i] = 0.f; 
+    }
 
     int f;
-    printf ("!Rawr xd\n");
     for (f = 0; f < (int)pow(2, ceil(log2(N))); f+=256)
     {   
         if (f+255 < (int)pow(2, ceil(log2(N))))
@@ -152,18 +180,14 @@ int main()
             FFT (buffer + f, buffer + f + 255);
             for (int i = 0; i < BUFFERSIZE; i++)
             {
-                // printf("buffer: %lf\n", (buffer + f + i)->real);
-                // printf("fft: %lf\n", FFTresult[i]);
                 FFTresult[i] += (buffer + f + i)->real;
             }
         }
     }
-    // printf ("!Rawr xd\n");
     for (int i = 0; i < BUFFERSIZE; i++)
     {
         FFTresult[i] /= f;
     }
-
 
     printf ("FFT done.\n");
 
@@ -205,7 +229,7 @@ int main()
 
     for (int b = 0; b < 25; b++)
     {
-        printf ("Bark %d value: %f\n", b, barkout[b]);
+        printf ("Bark Number %d Energy Value: %f\n", b, barkout[b]);
     }
 
     if(!sf_format_check(&sfInfo))
