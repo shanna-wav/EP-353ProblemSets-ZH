@@ -210,11 +210,11 @@ int main()
 
     //Implement FFT function at 256 increments.
 
-    for (f = 0; f < (int)pow(2, ceil(log2(N))); f+=256)
+    for (f = 0; f < (int)pow(2, ceil(log2(N))); f+=BUFFERSIZE)
     {   
-        if (f+255 < (int)pow(2, ceil(log2(N))))
+        if (f+(BUFFERSIZE - 1) < (int)pow(2, ceil(log2(N))))
         {
-            FFT (buffer + f, buffer + f + 255);
+            FFT (buffer + f, buffer + f + (BUFFERSIZE - 1));
             
             //Store FFT values temporarily in FFT result.
             //Get value of each sample in buffer.
@@ -307,5 +307,6 @@ int main()
 
     free (buffer);
     free (barkout);
+    free (FFTresult);
     return 0;
 }

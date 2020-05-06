@@ -1,283 +1,283 @@
 Sample Rate is: 44100 Hz
 Number of frames is: 44100 Hz
-FFT Value of Bin #0 at 0Hz: 3.13
-FFT Value of Bin #1 at 172Hz: 2.15
-FFT Value of Bin #2 at 344Hz: 4.25
-FFT Value of Bin #3 at 516Hz: 0.61
-FFT Value of Bin #4 at 689Hz: -0.01
+FFT Value of Bin #0 at 0Hz: 3.03
+FFT Value of Bin #1 at 172Hz: 2.16
+FFT Value of Bin #2 at 344Hz: 4.26
+FFT Value of Bin #3 at 516Hz: 0.59
+FFT Value of Bin #4 at 689Hz: 0.02
 FFT Value of Bin #5 at 861Hz: 0.37
 FFT Value of Bin #6 at 1033Hz: 1.53
-FFT Value of Bin #7 at 1205Hz: 0.27
-FFT Value of Bin #8 at 1378Hz: 0.22
-FFT Value of Bin #9 at 1550Hz: -0.26
-FFT Value of Bin #10 at 1722Hz: -0.75
-FFT Value of Bin #11 at 1894Hz: 0.13
+FFT Value of Bin #7 at 1205Hz: 0.40
+FFT Value of Bin #8 at 1378Hz: 0.21
+FFT Value of Bin #9 at 1550Hz: -0.27
+FFT Value of Bin #10 at 1722Hz: -0.76
+FFT Value of Bin #11 at 1894Hz: 0.10
 FFT Value of Bin #12 at 2067Hz: 0.18
 FFT Value of Bin #13 at 2239Hz: 0.46
 FFT Value of Bin #14 at 2411Hz: 0.01
-FFT Value of Bin #15 at 2583Hz: 0.71
+FFT Value of Bin #15 at 2583Hz: 0.60
 FFT Value of Bin #16 at 2756Hz: -0.23
-FFT Value of Bin #17 at 2928Hz: -0.38
-FFT Value of Bin #18 at 3100Hz: -0.35
-FFT Value of Bin #19 at 3273Hz: -0.06
+FFT Value of Bin #17 at 2928Hz: -0.37
+FFT Value of Bin #18 at 3100Hz: -0.36
+FFT Value of Bin #19 at 3273Hz: -0.04
 FFT Value of Bin #20 at 3445Hz: -0.03
-FFT Value of Bin #21 at 3617Hz: 0.40
-FFT Value of Bin #22 at 3789Hz: -0.42
-FFT Value of Bin #23 at 3962Hz: 0.26
-FFT Value of Bin #24 at 4134Hz: -0.49
-FFT Value of Bin #25 at 4306Hz: -0.07
-FFT Value of Bin #26 at 4478Hz: -0.64
-FFT Value of Bin #27 at 4651Hz: 0.02
-FFT Value of Bin #28 at 4823Hz: 0.28
+FFT Value of Bin #21 at 3617Hz: 0.41
+FFT Value of Bin #22 at 3789Hz: -0.29
+FFT Value of Bin #23 at 3962Hz: 0.25
+FFT Value of Bin #24 at 4134Hz: -0.50
+FFT Value of Bin #25 at 4306Hz: -0.08
+FFT Value of Bin #26 at 4478Hz: -0.66
+FFT Value of Bin #27 at 4651Hz: 0.03
+FFT Value of Bin #28 at 4823Hz: 0.29
 FFT Value of Bin #29 at 4995Hz: 0.18
 FFT Value of Bin #30 at 5167Hz: -0.11
-FFT Value of Bin #31 at 5340Hz: 0.49
-FFT Value of Bin #32 at 5512Hz: -1.14
+FFT Value of Bin #31 at 5340Hz: 0.38
+FFT Value of Bin #32 at 5512Hz: -1.13
 FFT Value of Bin #33 at 5684Hz: 0.10
-FFT Value of Bin #34 at 5857Hz: -0.46
-FFT Value of Bin #35 at 6029Hz: -0.13
+FFT Value of Bin #34 at 5857Hz: -0.47
+FFT Value of Bin #35 at 6029Hz: -0.11
 FFT Value of Bin #36 at 6201Hz: -0.20
 FFT Value of Bin #37 at 6373Hz: 0.42
-FFT Value of Bin #38 at 6546Hz: -0.37
-FFT Value of Bin #39 at 6718Hz: 0.26
-FFT Value of Bin #40 at 6890Hz: -0.44
-FFT Value of Bin #41 at 7062Hz: 0.04
-FFT Value of Bin #42 at 7235Hz: -0.39
-FFT Value of Bin #43 at 7407Hz: -0.03
-FFT Value of Bin #44 at 7579Hz: 0.20
+FFT Value of Bin #38 at 6546Hz: -0.24
+FFT Value of Bin #39 at 6718Hz: 0.25
+FFT Value of Bin #40 at 6890Hz: -0.46
+FFT Value of Bin #41 at 7062Hz: 0.02
+FFT Value of Bin #42 at 7235Hz: -0.41
+FFT Value of Bin #43 at 7407Hz: -0.02
+FFT Value of Bin #44 at 7579Hz: 0.21
 FFT Value of Bin #45 at 7751Hz: 0.15
-FFT Value of Bin #46 at 7924Hz: 0.36
-FFT Value of Bin #47 at 8096Hz: 0.27
-FFT Value of Bin #48 at 8268Hz: -0.39
-FFT Value of Bin #49 at 8441Hz: -0.12
-FFT Value of Bin #50 at 8613Hz: -0.19
-FFT Value of Bin #51 at 8785Hz: -0.07
+FFT Value of Bin #46 at 7924Hz: 0.26
+FFT Value of Bin #47 at 8096Hz: 0.28
+FFT Value of Bin #48 at 8268Hz: -0.38
+FFT Value of Bin #49 at 8441Hz: -0.13
+FFT Value of Bin #50 at 8613Hz: -0.17
+FFT Value of Bin #51 at 8785Hz: -0.06
 FFT Value of Bin #52 at 8957Hz: 0.16
-FFT Value of Bin #53 at 9130Hz: -0.06
-FFT Value of Bin #54 at 9302Hz: 0.06
-FFT Value of Bin #55 at 9474Hz: -0.37
-FFT Value of Bin #56 at 9646Hz: 0.00
-FFT Value of Bin #57 at 9819Hz: -0.17
+FFT Value of Bin #53 at 9130Hz: 0.07
+FFT Value of Bin #54 at 9302Hz: 0.05
+FFT Value of Bin #55 at 9474Hz: -0.38
+FFT Value of Bin #56 at 9646Hz: -0.01
+FFT Value of Bin #57 at 9819Hz: -0.19
 FFT Value of Bin #58 at 9991Hz: -0.18
-FFT Value of Bin #59 at 10163Hz: 0.22
+FFT Value of Bin #59 at 10163Hz: 0.23
 FFT Value of Bin #60 at 10335Hz: 0.06
 FFT Value of Bin #61 at 10508Hz: 0.12
 FFT Value of Bin #62 at 10680Hz: -0.23
-FFT Value of Bin #63 at 10852Hz: -0.05
-FFT Value of Bin #64 at 11025Hz: -0.63
-FFT Value of Bin #65 at 11197Hz: -0.31
-FFT Value of Bin #66 at 11369Hz: -0.44
-FFT Value of Bin #67 at 11541Hz: -0.39
+FFT Value of Bin #63 at 10852Hz: -0.15
+FFT Value of Bin #64 at 11025Hz: -0.62
+FFT Value of Bin #65 at 11197Hz: -0.30
+FFT Value of Bin #66 at 11369Hz: -0.45
+FFT Value of Bin #67 at 11541Hz: -0.37
 FFT Value of Bin #68 at 11714Hz: -0.15
-FFT Value of Bin #69 at 11886Hz: 0.23
-FFT Value of Bin #70 at 12058Hz: -0.35
-FFT Value of Bin #71 at 12230Hz: 0.22
-FFT Value of Bin #72 at 12403Hz: -0.51
-FFT Value of Bin #73 at 12575Hz: 0.23
-FFT Value of Bin #74 at 12747Hz: -0.30
+FFT Value of Bin #69 at 11886Hz: 0.24
+FFT Value of Bin #70 at 12058Hz: -0.22
+FFT Value of Bin #71 at 12230Hz: 0.21
+FFT Value of Bin #72 at 12403Hz: -0.52
+FFT Value of Bin #73 at 12575Hz: 0.22
+FFT Value of Bin #74 at 12747Hz: -0.32
 FFT Value of Bin #75 at 12919Hz: -0.09
-FFT Value of Bin #76 at 13092Hz: 0.13
+FFT Value of Bin #76 at 13092Hz: 0.14
 FFT Value of Bin #77 at 13264Hz: 0.14
-FFT Value of Bin #78 at 13436Hz: 0.39
-FFT Value of Bin #79 at 13608Hz: 0.19
-FFT Value of Bin #80 at 13781Hz: -0.42
-FFT Value of Bin #81 at 13953Hz: 0.06
-FFT Value of Bin #82 at 14125Hz: -0.17
+FFT Value of Bin #78 at 13436Hz: 0.29
+FFT Value of Bin #79 at 13608Hz: 0.20
+FFT Value of Bin #80 at 13781Hz: -0.41
+FFT Value of Bin #81 at 13953Hz: 0.05
+FFT Value of Bin #82 at 14125Hz: -0.15
 FFT Value of Bin #83 at 14298Hz: -0.08
 FFT Value of Bin #84 at 14470Hz: 0.11
-FFT Value of Bin #85 at 14642Hz: -0.06
-FFT Value of Bin #86 at 14814Hz: 0.10
-FFT Value of Bin #87 at 14987Hz: -0.35
-FFT Value of Bin #88 at 15159Hz: 0.04
-FFT Value of Bin #89 at 15331Hz: -0.05
+FFT Value of Bin #85 at 14642Hz: 0.07
+FFT Value of Bin #86 at 14814Hz: 0.09
+FFT Value of Bin #87 at 14987Hz: -0.36
+FFT Value of Bin #88 at 15159Hz: 0.03
+FFT Value of Bin #89 at 15331Hz: -0.07
 FFT Value of Bin #90 at 15503Hz: -0.08
-FFT Value of Bin #91 at 15676Hz: 0.20
+FFT Value of Bin #91 at 15676Hz: 0.21
 FFT Value of Bin #92 at 15848Hz: 0.02
 FFT Value of Bin #93 at 16020Hz: 0.12
-FFT Value of Bin #94 at 16192Hz: 0.35
-FFT Value of Bin #95 at 16365Hz: -0.75
-FFT Value of Bin #96 at 16537Hz: -0.42
-FFT Value of Bin #97 at 16709Hz: -0.16
-FFT Value of Bin #98 at 16882Hz: -0.34
+FFT Value of Bin #94 at 16192Hz: 0.25
+FFT Value of Bin #95 at 16365Hz: -0.74
+FFT Value of Bin #96 at 16537Hz: -0.41
+FFT Value of Bin #97 at 16709Hz: -0.18
+FFT Value of Bin #98 at 16882Hz: -0.32
 FFT Value of Bin #99 at 17054Hz: -0.27
 FFT Value of Bin #100 at 17226Hz: 0.16
-FFT Value of Bin #101 at 17398Hz: -0.18
+FFT Value of Bin #101 at 17398Hz: -0.05
 FFT Value of Bin #102 at 17571Hz: 0.14
-FFT Value of Bin #103 at 17743Hz: -0.36
-FFT Value of Bin #104 at 17915Hz: 0.14
-FFT Value of Bin #105 at 18087Hz: -0.12
-FFT Value of Bin #106 at 18260Hz: -0.07
-FFT Value of Bin #107 at 18432Hz: 0.18
+FFT Value of Bin #103 at 17743Hz: -0.38
+FFT Value of Bin #104 at 17915Hz: 0.13
+FFT Value of Bin #105 at 18087Hz: -0.15
+FFT Value of Bin #106 at 18260Hz: -0.06
+FFT Value of Bin #107 at 18432Hz: 0.19
 FFT Value of Bin #108 at 18604Hz: 0.05
-FFT Value of Bin #109 at 18776Hz: 0.50
-FFT Value of Bin #110 at 18949Hz: 0.21
-FFT Value of Bin #111 at 19121Hz: -0.11
-FFT Value of Bin #112 at 19293Hz: 0.03
-FFT Value of Bin #113 at 19466Hz: -0.11
+FFT Value of Bin #109 at 18776Hz: 0.40
+FFT Value of Bin #110 at 18949Hz: 0.22
+FFT Value of Bin #111 at 19121Hz: -0.10
+FFT Value of Bin #112 at 19293Hz: 0.02
+FFT Value of Bin #113 at 19466Hz: -0.08
 FFT Value of Bin #114 at 19638Hz: -0.06
 FFT Value of Bin #115 at 19810Hz: 0.18
-FFT Value of Bin #116 at 19982Hz: -0.16
-FFT Value of Bin #117 at 20155Hz: 0.19
-FFT Value of Bin #118 at 20327Hz: -0.41
-FFT Value of Bin #119 at 20499Hz: 0.05
-FFT Value of Bin #120 at 20671Hz: -0.10
-FFT Value of Bin #121 at 20844Hz: -0.00
-FFT Value of Bin #122 at 21016Hz: 0.19
-FFT Value of Bin #123 at 21188Hz: 0.05
+FFT Value of Bin #116 at 19982Hz: -0.03
+FFT Value of Bin #117 at 20155Hz: 0.18
+FFT Value of Bin #118 at 20327Hz: -0.42
+FFT Value of Bin #119 at 20499Hz: 0.03
+FFT Value of Bin #120 at 20671Hz: -0.13
+FFT Value of Bin #121 at 20844Hz: 0.00
+FFT Value of Bin #122 at 21016Hz: 0.20
+FFT Value of Bin #123 at 21188Hz: 0.04
 FFT Value of Bin #124 at 21360Hz: 0.06
 FFT Value of Bin #125 at 21533Hz: -0.14
 FFT Value of Bin #126 at 21705Hz: -0.22
-FFT Value of Bin #127 at 21877Hz: -0.59
-FFT Value of Bin #128 at 22050Hz: -0.56
-FFT Value of Bin #129 at 22222Hz: -0.86
-FFT Value of Bin #130 at 22394Hz: -0.13
-FFT Value of Bin #131 at 22566Hz: -0.37
+FFT Value of Bin #127 at 21877Hz: -0.69
+FFT Value of Bin #128 at 22050Hz: -0.55
+FFT Value of Bin #129 at 22222Hz: -0.85
+FFT Value of Bin #130 at 22394Hz: -0.14
+FFT Value of Bin #131 at 22566Hz: -0.35
 FFT Value of Bin #132 at 22739Hz: -0.02
-FFT Value of Bin #133 at 22911Hz: 0.29
-FFT Value of Bin #134 at 23083Hz: -0.26
+FFT Value of Bin #133 at 22911Hz: 0.30
+FFT Value of Bin #134 at 23083Hz: -0.13
 FFT Value of Bin #135 at 23255Hz: 0.25
-FFT Value of Bin #136 at 23428Hz: -0.58
-FFT Value of Bin #137 at 23600Hz: 0.37
-FFT Value of Bin #138 at 23772Hz: -0.25
+FFT Value of Bin #136 at 23428Hz: -0.59
+FFT Value of Bin #137 at 23600Hz: 0.36
+FFT Value of Bin #138 at 23772Hz: -0.27
 FFT Value of Bin #139 at 23944Hz: -0.18
-FFT Value of Bin #140 at 24117Hz: 0.14
+FFT Value of Bin #140 at 24117Hz: 0.15
 FFT Value of Bin #141 at 24289Hz: 0.23
-FFT Value of Bin #142 at 24461Hz: 0.40
-FFT Value of Bin #143 at 24633Hz: -0.03
-FFT Value of Bin #144 at 24806Hz: -0.56
-FFT Value of Bin #145 at 24978Hz: 0.17
-FFT Value of Bin #146 at 25150Hz: -0.21
+FFT Value of Bin #142 at 24461Hz: 0.30
+FFT Value of Bin #143 at 24633Hz: -0.02
+FFT Value of Bin #144 at 24806Hz: -0.55
+FFT Value of Bin #145 at 24978Hz: 0.16
+FFT Value of Bin #146 at 25150Hz: -0.19
 FFT Value of Bin #147 at 25323Hz: -0.19
 FFT Value of Bin #148 at 25495Hz: 0.08
-FFT Value of Bin #149 at 25667Hz: -0.05
-FFT Value of Bin #150 at 25839Hz: 0.09
-FFT Value of Bin #151 at 26012Hz: -0.30
-FFT Value of Bin #152 at 26184Hz: 0.00
-FFT Value of Bin #153 at 26356Hz: 0.07
-FFT Value of Bin #154 at 26528Hz: -0.06
-FFT Value of Bin #155 at 26701Hz: 0.15
+FFT Value of Bin #149 at 25667Hz: 0.08
+FFT Value of Bin #150 at 25839Hz: 0.08
+FFT Value of Bin #151 at 26012Hz: -0.31
+FFT Value of Bin #152 at 26184Hz: -0.01
+FFT Value of Bin #153 at 26356Hz: 0.05
+FFT Value of Bin #154 at 26528Hz: -0.05
+FFT Value of Bin #155 at 26701Hz: 0.16
 FFT Value of Bin #156 at 26873Hz: -0.02
 FFT Value of Bin #157 at 27045Hz: 0.18
-FFT Value of Bin #158 at 27217Hz: 0.35
-FFT Value of Bin #159 at 27390Hz: -0.90
-FFT Value of Bin #160 at 27562Hz: -0.37
-FFT Value of Bin #161 at 27734Hz: -0.17
-FFT Value of Bin #162 at 27907Hz: -0.34
+FFT Value of Bin #158 at 27217Hz: 0.24
+FFT Value of Bin #159 at 27390Hz: -0.89
+FFT Value of Bin #160 at 27562Hz: -0.36
+FFT Value of Bin #161 at 27734Hz: -0.19
+FFT Value of Bin #162 at 27907Hz: -0.32
 FFT Value of Bin #163 at 28079Hz: -0.35
-FFT Value of Bin #164 at 28251Hz: 0.10
-FFT Value of Bin #165 at 28423Hz: -0.18
-FFT Value of Bin #166 at 28596Hz: 0.13
-FFT Value of Bin #167 at 28768Hz: -0.34
-FFT Value of Bin #168 at 28940Hz: 0.15
-FFT Value of Bin #169 at 29112Hz: -0.01
-FFT Value of Bin #170 at 29285Hz: -0.05
-FFT Value of Bin #171 at 29457Hz: 0.15
+FFT Value of Bin #164 at 28251Hz: 0.11
+FFT Value of Bin #165 at 28423Hz: -0.05
+FFT Value of Bin #166 at 28596Hz: 0.12
+FFT Value of Bin #167 at 28768Hz: -0.35
+FFT Value of Bin #168 at 28940Hz: 0.14
+FFT Value of Bin #169 at 29112Hz: -0.03
+FFT Value of Bin #170 at 29285Hz: -0.04
+FFT Value of Bin #171 at 29457Hz: 0.16
 FFT Value of Bin #172 at 29629Hz: 0.00
-FFT Value of Bin #173 at 29801Hz: 0.55
-FFT Value of Bin #174 at 29974Hz: 0.20
-FFT Value of Bin #175 at 30146Hz: -0.03
-FFT Value of Bin #176 at 30318Hz: 0.04
-FFT Value of Bin #177 at 30491Hz: -0.03
+FFT Value of Bin #173 at 29801Hz: 0.44
+FFT Value of Bin #174 at 29974Hz: 0.21
+FFT Value of Bin #175 at 30146Hz: -0.02
+FFT Value of Bin #176 at 30318Hz: 0.02
+FFT Value of Bin #177 at 30491Hz: -0.01
 FFT Value of Bin #178 at 30663Hz: -0.07
-FFT Value of Bin #179 at 30835Hz: 0.16
-FFT Value of Bin #180 at 31007Hz: -0.21
-FFT Value of Bin #181 at 31180Hz: 0.23
-FFT Value of Bin #182 at 31352Hz: -0.41
-FFT Value of Bin #183 at 31524Hz: 0.07
-FFT Value of Bin #184 at 31696Hz: -0.07
-FFT Value of Bin #185 at 31869Hz: 0.10
-FFT Value of Bin #186 at 32041Hz: 0.21
+FFT Value of Bin #179 at 30835Hz: 0.17
+FFT Value of Bin #180 at 31007Hz: -0.08
+FFT Value of Bin #181 at 31180Hz: 0.22
+FFT Value of Bin #182 at 31352Hz: -0.43
+FFT Value of Bin #183 at 31524Hz: 0.06
+FFT Value of Bin #184 at 31696Hz: -0.10
+FFT Value of Bin #185 at 31869Hz: 0.11
+FFT Value of Bin #186 at 32041Hz: 0.22
 FFT Value of Bin #187 at 32213Hz: 0.03
 FFT Value of Bin #188 at 32385Hz: 0.03
 FFT Value of Bin #189 at 32558Hz: -0.09
-FFT Value of Bin #190 at 32730Hz: -0.09
-FFT Value of Bin #191 at 32902Hz: -0.57
-FFT Value of Bin #192 at 33075Hz: -0.40
-FFT Value of Bin #193 at 33247Hz: -0.02
-FFT Value of Bin #194 at 33419Hz: -0.47
+FFT Value of Bin #190 at 32730Hz: -0.20
+FFT Value of Bin #191 at 32902Hz: -0.56
+FFT Value of Bin #192 at 33075Hz: -0.39
+FFT Value of Bin #193 at 33247Hz: -0.04
+FFT Value of Bin #194 at 33419Hz: -0.45
 FFT Value of Bin #195 at 33591Hz: -0.24
-FFT Value of Bin #196 at 33764Hz: 0.11
-FFT Value of Bin #197 at 33936Hz: -0.25
-FFT Value of Bin #198 at 34108Hz: 0.16
-FFT Value of Bin #199 at 34280Hz: -0.46
-FFT Value of Bin #200 at 34453Hz: 0.26
-FFT Value of Bin #201 at 34625Hz: -0.13
+FFT Value of Bin #196 at 33764Hz: 0.12
+FFT Value of Bin #197 at 33936Hz: -0.12
+FFT Value of Bin #198 at 34108Hz: 0.15
+FFT Value of Bin #199 at 34280Hz: -0.47
+FFT Value of Bin #200 at 34453Hz: 0.25
+FFT Value of Bin #201 at 34625Hz: -0.15
 FFT Value of Bin #202 at 34797Hz: -0.10
-FFT Value of Bin #203 at 34969Hz: 0.11
+FFT Value of Bin #203 at 34969Hz: 0.12
 FFT Value of Bin #204 at 35142Hz: 0.06
-FFT Value of Bin #205 at 35314Hz: 0.46
+FFT Value of Bin #205 at 35314Hz: 0.36
 FFT Value of Bin #206 at 35486Hz: 0.16
 FFT Value of Bin #207 at 35658Hz: -0.21
-FFT Value of Bin #208 at 35831Hz: 0.09
-FFT Value of Bin #209 at 36003Hz: -0.11
+FFT Value of Bin #208 at 35831Hz: 0.08
+FFT Value of Bin #209 at 36003Hz: -0.09
 FFT Value of Bin #210 at 36175Hz: -0.08
 FFT Value of Bin #211 at 36348Hz: 0.12
-FFT Value of Bin #212 at 36520Hz: -0.14
-FFT Value of Bin #213 at 36692Hz: 0.17
-FFT Value of Bin #214 at 36864Hz: -0.37
-FFT Value of Bin #215 at 37037Hz: 0.07
-FFT Value of Bin #216 at 37209Hz: 0.00
+FFT Value of Bin #212 at 36520Hz: -0.01
+FFT Value of Bin #213 at 36692Hz: 0.16
+FFT Value of Bin #214 at 36864Hz: -0.38
+FFT Value of Bin #215 at 37037Hz: 0.06
+FFT Value of Bin #216 at 37209Hz: -0.02
 FFT Value of Bin #217 at 37381Hz: 0.04
-FFT Value of Bin #218 at 37553Hz: 0.21
+FFT Value of Bin #218 at 37553Hz: 0.22
 FFT Value of Bin #219 at 37726Hz: 0.01
 FFT Value of Bin #220 at 37898Hz: 0.08
-FFT Value of Bin #221 at 38070Hz: 0.41
-FFT Value of Bin #222 at 38242Hz: -0.77
-FFT Value of Bin #223 at 38415Hz: -0.30
-FFT Value of Bin #224 at 38587Hz: -0.28
-FFT Value of Bin #225 at 38759Hz: -0.29
+FFT Value of Bin #221 at 38070Hz: 0.31
+FFT Value of Bin #222 at 38242Hz: -0.76
+FFT Value of Bin #223 at 38415Hz: -0.29
+FFT Value of Bin #224 at 38587Hz: -0.29
+FFT Value of Bin #225 at 38759Hz: -0.27
 FFT Value of Bin #226 at 38932Hz: -0.32
-FFT Value of Bin #227 at 39104Hz: 0.13
-FFT Value of Bin #228 at 39276Hz: -0.26
+FFT Value of Bin #227 at 39104Hz: 0.14
+FFT Value of Bin #228 at 39276Hz: -0.13
 FFT Value of Bin #229 at 39448Hz: 0.18
-FFT Value of Bin #230 at 39621Hz: -0.39
-FFT Value of Bin #231 at 39793Hz: 0.16
-FFT Value of Bin #232 at 39965Hz: -0.09
+FFT Value of Bin #230 at 39621Hz: -0.40
+FFT Value of Bin #231 at 39793Hz: 0.15
+FFT Value of Bin #232 at 39965Hz: -0.11
 FFT Value of Bin #233 at 40137Hz: 0.01
-FFT Value of Bin #234 at 40310Hz: 0.18
+FFT Value of Bin #234 at 40310Hz: 0.19
 FFT Value of Bin #235 at 40482Hz: 0.05
-FFT Value of Bin #236 at 40654Hz: 0.47
+FFT Value of Bin #236 at 40654Hz: 0.37
 FFT Value of Bin #237 at 40826Hz: 0.25
-FFT Value of Bin #238 at 40999Hz: -0.12
-FFT Value of Bin #239 at 41171Hz: 0.13
-FFT Value of Bin #240 at 41343Hz: -0.05
+FFT Value of Bin #238 at 40999Hz: -0.11
+FFT Value of Bin #239 at 41171Hz: 0.11
+FFT Value of Bin #240 at 41343Hz: -0.03
 FFT Value of Bin #241 at 41516Hz: -0.03
-FFT Value of Bin #242 at 41688Hz: 0.18
-FFT Value of Bin #243 at 41860Hz: -0.15
-FFT Value of Bin #244 at 42032Hz: 0.16
-FFT Value of Bin #245 at 42205Hz: -0.37
-FFT Value of Bin #246 at 42377Hz: 0.04
-FFT Value of Bin #247 at 42549Hz: -0.09
-FFT Value of Bin #248 at 42721Hz: 0.02
-FFT Value of Bin #249 at 42894Hz: 0.25
+FFT Value of Bin #242 at 41688Hz: 0.19
+FFT Value of Bin #243 at 41860Hz: -0.02
+FFT Value of Bin #244 at 42032Hz: 0.15
+FFT Value of Bin #245 at 42205Hz: -0.39
+FFT Value of Bin #246 at 42377Hz: 0.03
+FFT Value of Bin #247 at 42549Hz: -0.11
+FFT Value of Bin #248 at 42721Hz: 0.03
+FFT Value of Bin #249 at 42894Hz: 0.26
 FFT Value of Bin #250 at 43066Hz: 0.05
 FFT Value of Bin #251 at 43238Hz: 0.06
 FFT Value of Bin #252 at 43410Hz: -0.15
 FFT Value of Bin #253 at 43583Hz: -0.19
 FFT Value of Bin #254 at 43755Hz: -0.21
 FFT Value of Bin #255 at 43927Hz: -0.25
-Bark Number 0 Energy Value: -231584178474632390847141970017375815706539969331281128078915168015826259279872.000000
-Bark Number 1 Energy Value: -231584178474632390847141970017375815706539969331281128078915168015826259279872.000000
+Bark Number 0 Energy Value: 3.028301
+Bark Number 1 Energy Value: 2.162383
 Bark Number 2 Energy Value: 0.000000
-Bark Number 3 Energy Value: 4.249636
+Bark Number 3 Energy Value: 4.258428
 Bark Number 4 Energy Value: 0.000000
-Bark Number 5 Energy Value: 0.606131
-Bark Number 6 Energy Value: 0.225279
-Bark Number 7 Energy Value: 0.372110
-Bark Number 8 Energy Value: -231584178474632390847141970017375815706539969331281128078915168015826259279872.000000
-Bark Number 9 Energy Value: -231584178474632390847141970017375815706539969331281128078915168015826259279872.000000
-Bark Number 10 Energy Value: 0.219513
-Bark Number 11 Energy Value: -0.255688
-Bark Number 12 Energy Value: -0.623145
-Bark Number 13 Energy Value: 0.631832
-Bark Number 14 Energy Value: 0.954887
-Bark Number 15 Energy Value: -0.963753
-Bark Number 16 Energy Value: 0.313670
-Bark Number 17 Energy Value: -0.710539
-Bark Number 18 Energy Value: -0.261805
-Bark Number 19 Energy Value: -1.344557
-Bark Number 20 Energy Value: -0.317341
-Bark Number 21 Energy Value: 0.172967
-Bark Number 22 Energy Value: -2.512870
-Bark Number 23 Energy Value: -0.472667
+Bark Number 5 Energy Value: 0.593027
+Bark Number 6 Energy Value: 0.015527
+Bark Number 7 Energy Value: 0.372781
+Bark Number 8 Energy Value: 1.529439
+Bark Number 9 Energy Value: 0.395996
+Bark Number 10 Energy Value: 0.213118
+Bark Number 11 Energy Value: -0.268612
+Bark Number 12 Energy Value: -0.657986
+Bark Number 13 Energy Value: 0.643505
+Bark Number 14 Energy Value: 0.618733
+Bark Number 15 Energy Value: -0.959564
+Bark Number 16 Energy Value: 0.339450
+Bark Number 17 Energy Value: -0.611594
+Bark Number 18 Energy Value: -0.273483
+Bark Number 19 Energy Value: -1.423892
+Bark Number 20 Energy Value: -0.225645
+Bark Number 21 Energy Value: 0.221137
+Bark Number 22 Energy Value: -2.628579
+Bark Number 23 Energy Value: -0.357498
 Bark Number 24 Energy Value: 0.000000
